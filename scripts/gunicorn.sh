@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source env/bin/activate
+source saswatfinenv/bin/activate
 
 cd /var/lib/jenkins/workspace/02_DJango_CustApp_CICD/
 
