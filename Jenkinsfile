@@ -6,6 +6,7 @@ pipeline{
        
       steps  {
             sh '''
+            cd $WORKSPACE/scripts
             chmod +x envsetup.sh
             ./envsetup.sh
             '''}
@@ -13,6 +14,7 @@ pipeline{
         stage('Setup Gunicorn Setup'){
             steps {
                 sh '''
+                cd $WORKSPACE/scripts
                 chmod +x gunicorn.sh
                 ./gunicorn.sh
                 '''
@@ -21,6 +23,7 @@ pipeline{
         stage('setup NGINX'){
             steps {
                 sh '''
+                cd $WORKSPACE/scripts
                 chmod +x nginx.sh
                 ./nginx.sh
                 '''
