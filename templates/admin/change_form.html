@@ -1,0 +1,31 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+{% block extrahead %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'drf_app1/drf_app1_custom_admin.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <script type="text/javascript">
+    (function($){
+      $(document).ready(function(){
+        // Add "Update" buttons for each field
+        $('.field').each(function(){
+          var input = $(this).find('input, select, textarea');
+          input.after('<button class="update-button">Update</button>');
+          input.hide();
+        });
+
+        // Handle click events on the "Update" buttons
+        $('.update-button').click(function(){
+          var field = $(this).prev('.field');
+          var input = field.find('input, select, textarea');
+          input.show().focus();
+          $(this).hide();
+        });
+      });
+    })(django.jQuery);
+  </script>
+
+{% endblock %}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .auth-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .auth-container h2 {
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left; /* Align text to the left */
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .input-group button {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 3px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .switch-link {
+            margin-top: 10px;
+            text-decoration: underline;
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="loginContainer" class="auth-container">
+    <h2>Login</h2>
+    <div class="input-group">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" placeholder="Enter your username">
+    </div>
+
+    <div class="input-group">
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password">
+    </div>
+
+    <div class="input-group">
+        <button onclick="validateLogin()">Login</button>
+    </div>
+
+    <p class="switch-link" onclick="toggleAuthForms()">Don't have an account? Signup here</p>
+</div>
+
+<div id="signupContainer" class="auth-container" style="display: none;">
+    <h2>Signup</h2>
+    <div class="input-group">
+        <label for="signupUsername">Username:</label>
+        <input type="text" id="signupUsername" placeholder="Choose a username">
+    </div>
+
+    <div class="input-group">
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" placeholder="Choose a password">
+    </div>
+
+    <div class="input-group">
+        <button onclick="validateSignup()">Signup</button>
+    </div>
+
+    <p class="switch-link" onclick="toggleAuthForms()">Already have an account? Login here</p>
+</div>
+
+<script>
+    function validateLogin() {
+        var loginUsername = document.getElementById("loginUsername").value;
+        var loginPassword = document.getElementById("loginPassword").value;
+
+        // Simple validation - Check if username and password are not empty
+        if (loginUsername.trim() === "" || loginPassword.trim() === "") {
+            alert("Please enter both username and password.");
+        } else {
+            // In a real application, you would send the data to a server for validation
+            alert("Login successful! Redirecting...");
+            // In a real application, you might redirect to another page or perform other actions.
+        }
+    }
+
+    function validateSignup() {
+        var signupUsername = document.getElementById("signupUsername").value;
+        var signupPassword = document.getElementById("signupPassword").value;
+
+        // Simple validation - Check if username and password are not empty
+        if (signupUsername.trim() === "" || signupPassword.trim() === "") {
+            alert("Please enter both username and password.");
+        } else {
+            // In a real application, you would send the data to a server for user registration
+            alert("Signup successful! Redirecting...");
+            // In a real application, you might redirect to another page or perform other actions.
+        }
+    }
+
+    function toggleAuthForms() {
+        var loginContainer = document.getElementById("loginContainer");
+        var signupContainer = document.getElementById("signupContainer");
+
+        if (loginContainer.style.display === "none") {
+            loginContainer.style.display = "block";
+            signupContainer.style.display = "none";
+        } else {
+            loginContainer.style.display = "none";
+            signupContainer.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
