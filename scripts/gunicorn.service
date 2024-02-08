@@ -6,8 +6,8 @@ After=network.target
 [Service]
 User=root
 Group=www-data
-WorkingDirectory=/var/lib/jenkins/workspace/django-cicd/app
-ExecStart=/var/lib/jenkins/workspace/django-cicd/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/django-cicd/error.log --bind unix:/run/gunicorn.sock app.wsgi:application
+WorkingDirectory=/var/lib/jenkins/workspace/02_DJango_CustApp_CICD/saswat_cust_app
+ExecStart=/var/lib/jenkins/workspace/02_DJango_CustApp_CICD/env/bin/gunicorn --workers 3 --log-level debug --error-logfile /var/lib/jenkins/workspace/02_DJango_CustApp_CICD/error.log --bind unix:/run/gunicorn.sock saswat_cust_info.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
