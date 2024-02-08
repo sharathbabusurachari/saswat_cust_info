@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd $WORKSPACE
 if [ -d "saswatfinenv" ]
 then
     echo "Python virtual environment exists." 
