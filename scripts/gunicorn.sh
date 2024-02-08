@@ -2,7 +2,7 @@
 
 source env/bin/activate
 
-cd /var/lib/jenkins/workspace/02_DJango_CustApp_CICD/saswat_cust_app
+cd /var/lib/jenkins/workspace/02_DJango_CustApp_CICD/
 
 python3 manage.py makemigrations
 python3 manage.py migrate
