@@ -6,6 +6,7 @@ pipeline{
        
       steps  {
             sh '''
+            sudo apt-get install python3.8-venv
             cd $WORKSPACE/scripts
             chmod +x envsetup.sh
             ./envsetup.sh
