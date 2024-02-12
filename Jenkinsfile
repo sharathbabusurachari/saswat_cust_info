@@ -36,7 +36,7 @@ pipeline{
                         sh '''
                         cd $WORKSPACE/scripts
                         chmod +x deploy.sh
-                        ./deploy.sh
+                        #./deploy.sh
                         '''
                     }
                 }
