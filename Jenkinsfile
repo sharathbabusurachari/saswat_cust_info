@@ -40,8 +40,7 @@ pipeline{
                     sh '''
                     cd $WORKSPACE/scripts
                     chmod +x deploy.sh
-                    sudo ./deploy.sh &
-                    sleep 60
+                    ./deploy.sh &
                     '''
                 }
 
