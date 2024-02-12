@@ -30,5 +30,15 @@ pipeline{
                 '''
             }
         }
+
+        stage('build application'){
+                    steps {
+                        sh '''
+                        cd $WORKSPACE/scripts
+                        chmod +x deploy.sh
+                        ./deploy.sh
+                        '''
+                    }
+                }
     }
 }
