@@ -30,7 +30,7 @@ pipeline{
                 '''
             }
         }
-
+}
         post {
                 always {
                     // This block will be executed regardless of the build result
@@ -65,5 +65,4 @@ pipeline{
                 }
             }
 
-    }
-}
+  }
