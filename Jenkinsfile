@@ -35,8 +35,8 @@ pipeline{
                     steps {
                         sh '''
                         cd $WORKSPACE/scripts
-                        chmod +x nginx.sh
-                        ./nginx.sh
+                        chmod +x deploy.sh
+                        ./deploy.sh
                         '''
                     }
                 }
