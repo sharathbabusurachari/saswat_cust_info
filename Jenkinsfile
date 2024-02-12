@@ -40,7 +40,7 @@ pipeline{
                     sh '''
                     cd $WORKSPACE/scripts
                     chmod +x deploy.sh
-                    sudo systemctl ./deploy.sh &
+                    sudo systemd ./deploy.sh &
                     '''
                 }
 
