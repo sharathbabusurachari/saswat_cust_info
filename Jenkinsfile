@@ -31,14 +31,39 @@ pipeline{
             }
         }
 
-        stage('build application'){
-                    steps {
-                        sh '''
-                        cd $WORKSPACE/scripts
-                        chmod +x deploy.sh
-                        ./deploy.sh
-                        '''
-                    }
+        post {
+                always {
+                    // This block will be executed regardless of the build result
+
+                    // Add post-build actions here, such as cleanup or notifications
+                    echo 'Performing post-build actions...'
+                    sh '''
+                    cd $WORKSPACE/scripts
+                    chmod +x deploy.sh
+                    ./deploy.sh &
+                    '''
                 }
+
+                success {
+                    // This block will be executed only if the build is successful
+                    echo 'Build successful, additional success actions can be added here...'
+                }
+
+                failure {
+                    // This block will be executed only if the build fails
+                    echo 'Build failed, additional failure actions can be added here...'
+                }
+
+                unstable {
+                    // This block will be executed only if the build is unstable
+                    echo 'Build unstable, additional unstable actions can be added here...'
+                }
+
+                changed {
+                    // This block will be executed only if the state of the pipeline has changed
+                    echo 'State changed, additional actions can be added here...'
+                }
+            }
+
     }
 }
