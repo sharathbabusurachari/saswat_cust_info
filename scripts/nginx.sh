@@ -3,7 +3,12 @@
 sudo cp -rf app.conf /etc/nginx/sites-available/saswat_cust_app
 chmod 710 /var/lib/jenkins/workspace/02_DJango_CustApp_CICD
 
-sudo ln -s /etc/nginx/sites-available/saswat_cust_app /etc/nginx/sites-enabled
+if [ ! -e /etc/nginx/sites-enabled ]; then
+    # Create the symbolic link
+    sudo ln -s /etc/nginx/sites-available/your_project /etc/nginx/sites-enabled
+
+fi
+
 sudo nginx -t
 
 sudo systemctl start nginx
