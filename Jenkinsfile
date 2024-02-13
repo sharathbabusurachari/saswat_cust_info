@@ -18,6 +18,7 @@ pipeline{
                 cd $WORKSPACE/scripts
                 chmod +x gunicorn.sh
                 ./gunicorn.sh
+                sleep 60
                 '''
             }
         }
@@ -27,6 +28,7 @@ pipeline{
                 cd $WORKSPACE/scripts
                 chmod +x nginx.sh
                 ./nginx.sh
+                sleep 60
                 '''
             }
         }
