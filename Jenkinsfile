@@ -42,7 +42,6 @@ pipeline{
                                                 sh "nohup python3 manage.py runserver qa05ci01:9000 &"
                                                 }
                         }*/
-
                     }
                 }
     }
