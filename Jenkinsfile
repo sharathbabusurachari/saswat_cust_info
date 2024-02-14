@@ -34,7 +34,8 @@ pipeline{
         stage('BUILD'){
                     steps {
                         sh '''
-                        cd $WORKSPACE
+                        cd $WORKSPACE/scripts
+                        ./deploy.sh
                         '''
                         /*source saswatfinenv/bin/activate
 
