@@ -18,7 +18,6 @@ pipeline{
                 cd $WORKSPACE/scripts
                 chmod +x gunicorn.sh
                 ./gunicorn.sh
-                sleep 60
                 '''
             }
         }
@@ -28,7 +27,6 @@ pipeline{
                 cd $WORKSPACE/scripts
                 chmod +x nginx.sh
                 ./nginx.sh
-                sleep 60
                 '''
             }
         }
@@ -42,6 +40,7 @@ pipeline{
                                                 withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
                                                 sh "nohup python3 manage.py runserver qa05ci01.com:9000 &"
                                                 }
+                        }
                         '''
                     }
                 }
