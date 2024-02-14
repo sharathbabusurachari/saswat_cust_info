@@ -35,6 +35,7 @@ pipeline{
                     steps {
                         sh '''
                         cd $WORKSPACE/scripts
+                        chmod +x deploy.sh
                         ./deploy.sh
                         '''
                         /*source saswatfinenv/bin/activate
