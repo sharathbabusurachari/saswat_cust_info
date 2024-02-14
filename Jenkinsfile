@@ -37,11 +37,11 @@ pipeline{
                         cd $WORKSPACE
                         source saswatfinenv/bin/activate
                         '''
-                        script {
+                        /*script {
                                                 withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
                                                 sh "nohup python3 manage.py runserver qa05ci01:9000 &"
                                                 }
-                        }
+                        }*/
 
                     }
                 }
