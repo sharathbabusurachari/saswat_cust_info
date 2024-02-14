@@ -36,9 +36,12 @@ pipeline{
         stage('BUILD'){
                     steps {
                         sh '''
-                        cd $WORKSPACE/scripts
-                        chmod +x deploy.sh
-                        #./deploy.sh
+                        cd $WORKSPACE
+                        source saswatfinenv/bin/activate
+                        script {
+                                                withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                                                sh "nohup python3 manage.py runserver qa05ci01.com:9000 &"
+                                                }
                         '''
                     }
                 }
