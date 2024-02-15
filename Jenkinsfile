@@ -40,7 +40,7 @@ pipeline{
                         '''
                         script {
                                                 withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
-                                                sh "nohup python3 manage.py runserver qa05ci01:9000 >>nohup.out 2>&1 &"
+                                                sh "nohup python3 manage.py runserver ci1.saswatfinance.com:9000 >>nohup.out 2>&1 &"
                                                 }
                         }
                     }
