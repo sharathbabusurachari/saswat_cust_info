@@ -38,10 +38,10 @@ pipeline{
                         chmod +x deploy.sh
                         ./deploy.sh
                         '''
-                        script {
+                        /*script {
                                                 withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
                                                 sh "nohup python3 manage.py runserver 0.0.0.0:9000 >>nohup.out 2>&1 &"
-                                                }
+                                                } */
                         }
                     }
                 }
