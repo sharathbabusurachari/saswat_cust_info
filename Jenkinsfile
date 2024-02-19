@@ -21,7 +21,7 @@ pipeline{
                 '''
             }
         }
-        stage('setup NGINX'){
+        stage('setup NGINX and host application'){
             steps {
                 sh '''
                 cd $WORKSPACE/scripts
@@ -31,7 +31,7 @@ pipeline{
             }
         }
 
-        stage('BUILD'){
+        /*stage('BUILD'){
                     steps {
                         sh '''
                         cd $WORKSPACE/scripts
@@ -44,7 +44,7 @@ pipeline{
                                                 }
                         }
                     }
-                }
+                }*/
     }
 
   }
